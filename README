@@ -1,0 +1,98 @@
+
+The source code for the Simple Linked List is in the following file:
+	SimpleLinkedList.hh
+
+The test suite can be found in this file:
+	SimpleLinkedList_test.cc
+
+I opted not to use something like Google Test, to avoid 3rd-party dependencies.
+Instead, I created a quite simple testing framework (TestUtils.hh), that compiles
+easily without any external dependencies.
+
+As per the requirements, the implementation is a Simple Single Linked List. It
+has just enough functionality to insert, remove, and iterate the list. The two
+functions requested are named as follows:
+	SimpleLinkedList::reverseIterative()
+	SimpleLinkedList::reverseRecursive()
+
+The following versions were used to develop and compile the code:
+
+	$ make --version
+	GNU Make 3.81
+	Copyright (C) 2006  Free Software Foundation, Inc.
+	This is free software; see the source for copying conditions.
+	There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+	PARTICULAR PURPOSE.
+
+	This program built for x86_64-pc-linux-gnu
+
+	$ g++ --version
+	g++ (Ubuntu 4.8.2-19ubuntu1) 4.8.2
+	Copyright (C) 2013 Free Software Foundation, Inc.
+	This is free software; see the source for copying conditions.  There is NO
+	warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+	$ uname -a
+	Linux mcl-xubuntu1404lts-vm 3.13.0-35-generic #62-Ubuntu SMP Fri Aug 15 01:58:42 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+I developed and compiled on a Xubuntu 14.04 LTS distribution.
+(Xubuntu is a lighter weight distro of Ubuntu)
+
+To compile:
+	$ make
+
+To clean:
+	$ make clean
+
+This is the simple output I get when compiling:
+	$ make
+	g++ -O2 SimpleLinkedList_test.cc -o SimpleLinkedList_test
+
+The following is how the test suite is executed, with the output I get:
+	$ ./SimpleLinkedList_test 
+	Test Passed: TEST_size_empty
+	Test Passed: TEST_size_notEmpty
+	Test Passed: TEST_empty_empty
+	Test Passed: TEST_empty_notEmpty
+	Test Passed: TEST_insert_emptyHead
+	Test Passed: TEST_append_emptyTail
+	Test Passed: TEST_pop_front_empty
+	Test Passed: TEST_pop_front_notEmpty
+	Test Passed: TEST_pop_back_empty
+	Test Passed: TEST_pop_front_notEmpty
+	Test Passed: TEST_reset
+	Test Passed: TEST_front_empty
+	Test Passed: TEST_front_notEmpty
+	Test Passed: TEST_back_empty
+	Test Passed: TEST_back_notEmpty
+	Test Passed: TEST_begin_empty
+	Test Passed: TEST_begin_emptyConst
+	Test Passed: TEST_beginEnd_notEmpty
+	Test Passed: TEST_beginEnd_notEmptyConst
+	Test Passed: TEST_end_empty
+	Test Passed: TEST_end_emptyConst
+	Test Passed: TEST_reverse_iterative_empty
+	Test Passed: TEST_reverse_iterative_NotEmpty
+	Test Passed: TEST_reverse_recursive_empty
+	Test Passed: TEST_reverse_recursive_NotEmpty
+
+Doxygen:
+I didnt include the doxygen output, since archive files cant be sent,
+but the following commands should generate the doxygen output:
+	$ doxygen -g SimpleLinkedList
+
+	Configuration file `SimpleLinkedList' created.
+
+	Now edit the configuration file and enter
+
+  	doxygen SimpleLinkedList
+
+	to generate the documentation for your project
+
+	$ doxygen SimpleLinkedList
+
+Regards,
+
+Brady Johnson
+bradyallenjohnson@gmail.com
+
